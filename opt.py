@@ -58,7 +58,7 @@ class OptInit():
         parser.add_argument('--train_path', type=str, default='../bigRed_h5_gcn')
         parser.add_argument('--n_blocks', default=4, type=int, help='number of basic blocks')
         parser.add_argument('--n_filters', default=128, type=int, help='number of channels of deep features')
-        parser.add_argument('--kernel_size', default=4, type=int, help='neighbor num (default:16)')
+        parser.add_argument('--kernel_size', default=3, type=int, help='neighbor num (default:16)')
         parser.add_argument('--batch_size', default=8, type=int, help='mini-batch size (default:16)')
         parser.add_argument('--num_channel', default=4, type=int, help='mini-batch size (default:16)')
 
