@@ -1,0 +1,53 @@
+==========       CONFIG      =============
+phase:train
+use_cpu:False
+test_path:../bigRed_h5_gcn/
+in_channels:4
+total_epochs:100
+save_freq:1
+iter:0
+lr_adjust_freq:20
+lr:0.001
+lr_decay_rate:0.5
+print_freq:100
+postname:
+multi_gpus:True
+gpuNum:0,1,2,3
+optim:adam
+seed:0
+visu:False
+no_clutter:False
+pretrained_model:/root/my_deepgcn_428/gcn_model1/My_gcn-res-edge-4-128-200421_model_best.pth
+block:res
+conv:edge
+act:relu
+norm:instance
+bias:True
+dropout:0.3
+epsilon:0.2
+stochastic:True
+train_path:../bigRed_h5_gcn
+n_blocks:7
+n_filters:128
+kernel_size:4
+batch_size:8
+num_channel:4
+task:my_deepgcn_428
+post:my_deepgcn_428-res-edge-7-128-200428
+save_path:/root/my_deepgcn_428/checkpoints/ckpts-my_deepgcn_428-res-edge-7-128-200428
+logdir:/root/my_deepgcn_428/logs/my_deepgcn_428-res-edge-7-128-200428
+device:cuda
+logger:<utils.tf_logger.TfLogger object at 0x7f98fb41ff98>
+epoch:-1
+printer:<Logger opt (INFO)>
+==========     CONFIG END    =============
+
+
+===> Phase is train.
+===> Creating dataloader ...
+===> computing Labelweight ...
+===> Loading the network ...
+===> loading pre-trained ...
+===> Init the optimizer ...
+===> Init Metric ...
+===> start training ...

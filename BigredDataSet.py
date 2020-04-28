@@ -66,8 +66,8 @@ class BigredDataset(InMemoryDataset):
             with h5py.File(osp.join(self.raw_dir, filename)) as f:
                 print('okay')
                 data_xyz = f['xyz'][:]
-                train_index = int(data_xyz.shape[0]*0.01)
-                validation_index = int(data_xyz.shape[0]*0.02)
+                train_index = int(data_xyz.shape[0]*0.7)
+                validation_index = int(data_xyz.shape[0]*0.9)
                 test_index =  int(data_xyz.shape[0]*1)
 
                 a = np.zeros((data_xyz.shape[0],data_xyz.shape[1],data_xyz.shape[2]+2))

@@ -131,7 +131,7 @@ def main():
             target = data.y
             batch_label2 = target.cpu().data.numpy()
             inputs = torch.cat((data.pos.transpose(2, 1).unsqueeze(3), data.x.transpose(2, 1).unsqueeze(3)), 1)
-            inputs = inputs[:, :5, :, :]
+            inputs = inputs[:, :opt.num_channel, :, :]
             gt = data.y.to(opt.device)
             # ------------------ zero, output, loss
             optimizer.zero_grad()
@@ -215,7 +215,7 @@ def main():
                 batch_label2 = target.cpu().data.numpy()
 
                 inputs = torch.cat((data.pos.transpose(2, 1).unsqueeze(3), data.x.transpose(2, 1).unsqueeze(3)), 1)
-                inputs = inputs[:, :5, :, :]
+                inputs = inputs[:, :opt.num_channel, :, :]
                 gt = data.y.to(opt.device)
                 out = model(inputs)
                 loss = criterion(out, gt)
